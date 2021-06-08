@@ -1,0 +1,21 @@
+dubbo:
+  scan:
+    base-packages: com.alibaba.cloud.dubbo.service
+  protocols:
+    dubbo:
+      port: -1
+
+feign:
+  hystrix:
+    enabled: true
+
+# 服务端口随机
+server:
+  port: 0
+
+# 暴露监控
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

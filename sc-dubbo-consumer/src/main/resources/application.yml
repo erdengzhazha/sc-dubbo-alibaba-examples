@@ -1,0 +1,25 @@
+# 设定提供者的名称
+provider:
+  application:
+    name: sc-dubbo-provider
+dubbo:
+  cloud:
+    # The subscribed services in consumer side
+    subscribed-services: ${provider.application.name}
+  protocols:
+    dubbo:
+      port: -1
+  consumer:
+    check: false
+
+# 设定服务的端口
+server:
+  # 0 为随机
+  port: 0
+
+# 暴露监控
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
